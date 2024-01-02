@@ -1,4 +1,4 @@
-#  PROJECT: Binary trees
+#  Project: Binary trees
 ## Overview
 A Binary Tree is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child. It is essential to distinguish this from a B-tree, which is a balanced tree data structure commonly used in databases and filesystems.
 ## Data Structure and Algorithms - Tree
@@ -18,4 +18,4 @@ The right subtree of a node contains only nodes with keys greater than the node'
 The left and right subtree must also be a binary search tree.
 BSTs provide efficient searching, insertion, and deletion operations.
 ### Data Structures: Binary Tree
-inary Trees are foundational data structures that allow for efficient data storage and retrieval. They are prevalent in computer science and are the basis for more complex data structures like AVL trees, Red-Black trees, and more.
+Binary Trees are foundational data structures that allow for efficient data storage and retrieval. They are prevalent in computer science and are the basis for more complex data structures like AVL trees, Red-Black trees, and more.
