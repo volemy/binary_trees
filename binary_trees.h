@@ -17,7 +17,7 @@
  */
 struct binary_tree_s
 {
-    int n;
+   int n;
     struct binary_tree_s *parent;
     struct binary_tree_s *left;
     struct binary_tree_s *right;
@@ -54,7 +54,7 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
-int check_bst(const binary_tree_t *tree, int *min, int *max);
+int is_bst_util(const binary_tree_t *tree, int *prev);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);

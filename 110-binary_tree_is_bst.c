@@ -1,26 +1,28 @@
 #include "binary_trees.h"
 
 /**
- * check_bst - Helper function to validate if the tree is a BST recursively
+ * is_bst_util - Checks if a binary tree is a BST
  * @tree: Pointer to the root node of the tree to check
- * @min: Pointer to the node's value which acts as a minimum constraint
- * @max: Pointer to the node's value which acts as a maximum constraint
+ * @prev: Pointer to the previous node
  *
- * Return: 1 if BST, 0 otherwise
+ * Return: 1 if the tree is a BST, 0 otherwise
  */
 
-int check_bst(const binary_tree_t *tree, int *min, int *max)
+int is_bst_util(const binary_tree_t *tree, int *prev)
 {
-	if (!tree)
+	if (tree == NULL)
 		return (1);
 
-	if ((min && tree->n <= *min) || (max && tree->n >= *max))
+	if (!is_bst_util(tree->left, prev))
 		return (0);
 
-	return (check_bst(tree->left, min, max) &&
-			check_bst(tree->right, min, max));
-}
+	if (*prev != -1 && tree->n <= *prev)
+		return (0);
 
+	*prev = tree->n;
+
+	return (is_bst_util(tree->right, prev));
+}
 
 /**
  * binary_tree_is_bst - This function checks if a binary tree is a BST
@@ -31,6 +33,7 @@ int check_bst(const binary_tree_t *tree, int *min, int *max)
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	return (check_bst(tree, NULL, NULL));
-}
+	int prev = -1;
 
+	return (is_bst_util(tree, &prev));
+}
